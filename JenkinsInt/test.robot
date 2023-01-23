@@ -1,0 +1,18 @@
+*** Settings ***
+Library           SeleniumLibrary
+Resource          resourceTest.resource
+
+*** Variables ***
+${url}            https://www.bbc.co.uk/
+${browser}        chrome
+
+*** Test Cases ***
+compare
+    Compare2Var
+
+Login
+    [Tags]    1
+    Open Browser    ${url}    ${browser}
+    Close Browser    ${url}    ${browser}
+    Open Browser    ${url}    ${browser}
+    [Teardown]    close browser
