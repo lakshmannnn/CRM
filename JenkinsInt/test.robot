@@ -9,3 +9,9 @@ ${browser}        chrome
 *** Test Cases ***
 compare
     Compare2Var
+
+Login
+    [Tags]    1
+    Open Browser    ${url}    ${browser}
+    Close Browser
+    [Teardown]    close browser
