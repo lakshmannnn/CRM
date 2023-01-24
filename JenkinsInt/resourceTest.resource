@@ -1,5 +1,5 @@
 *** Variables ***
-${cmp1}           5
+${cmp1}           6
 ${cmp2}           5
 
 *** Keywords ***
