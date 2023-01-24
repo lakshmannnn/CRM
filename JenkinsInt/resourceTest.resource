@@ -1,6 +1,6 @@
 *** Variables ***
 ${cmp1}           5
-${cmp2}           6
+${cmp2}           5
 
 *** Keywords ***
 Compare2Var
