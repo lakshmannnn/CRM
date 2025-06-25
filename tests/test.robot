@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Resource          resources/POM/resourceTest.resource
+Resource          C:/Automation/Robot/JenkinsAuto/resources/POM/resourceTest.resource
 
 *** Variables ***
 ${url}            https://www.bbc.co.uk/

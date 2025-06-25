@@ -1,5 +1,6 @@
 # Default ignored files
+../results/**
 /shelf/
 /workspace.xml
-/JenkinsInt/*.html
-/JenkinsInt/*.xml
+../results/**
+C:/Automation/Robot/JenkinsAuto/results/*
