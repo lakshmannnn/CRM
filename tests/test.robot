@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Resource          resources/resourceTest.resource
+Resource          resources/POM/resourceTest.resource
 
 *** Variables ***
 ${url}            https://www.bbc.co.uk/
