@@ -1,4 +1,5 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-/JenkinsInt/log.html
+/JenkinsInt/*.html
+/JenkinsInt/*.xml
