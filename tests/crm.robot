@@ -1,6 +1,10 @@
 *** Settings ***
-Library    SeleniumLibrary
-#Resource    ../resources/first.robot
+Resource    ../resources/POM/crmGUI.robot
+Resource    ../resources/common.robot
+Suite Setup    Go to CRM and Setup Selenium Defaults
+Suite Teardown    Close All Browsers
+Test Setup    Mockup test data
+Test Teardown    Delete Mockup dasta
 #$ robot -d results -i 123 tests/crm.robot
 *** Variables ***
 ${url}    https://automationplayground.com/crm/
@@ -22,26 +26,10 @@ Login to CRM with valid credentials
 Should be able to add a new customer
     [documentation]    This test verifies that a new customer can be added to the CRM system.
     [Tags]    regression    smoke    123
-    Open Browser    ${url}    ${browser}
-    Set Selenium Timeout  2s
-    Set Selenium Speed    0.2s
-    #Set Window Position    341    169
-    #Set Window Size    1935    1090
-    Click Link    Sign In
-    Input Text     email-id    ${username}
-    Input Password    password    ${password}
-    Click Button    Submit
-    Wait Until Page Contains    Our Happy Customers
-    Click Link    id=new-customer
-    Wait until page contains     Add Customer
-    Input Text    id=EmailAddress    test@yahoo.com
-    Input Text    id=FirstName    Joh
-    Input Text    id=LastName    are
-    Input Text    id=City    Springfield
-    Select From List By Value    id=StateOrRegion    IL
-    Select Radio Button    gender    male
-    Select Checkbox    name=promos-name
-    Click Button    Submit
-    Wait Until Page Contains    text=Success! New customer added.
-    Close All Browsers
-*** Keywords ***
+    Go to CRM and Setup Selenium Defaults
+    Login to CRM
+    Create a new customer
+    Verify that the customer was added successfully
+    Close the browser
+
+
