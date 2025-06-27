@@ -1,10 +1,10 @@
 *** Settings ***
 Resource    ../resources/POM/crmGUI.robot
 Resource    ../resources/common.robot
-Suite Setup    Go to CRM and Setup Selenium Defaults
-Suite Teardown    Close All Browsers
-Test Setup    Mockup test data
-Test Teardown    Delete Mockup dasta
+Suite Setup    common.Go to CRM and Setup Selenium Defaults
+Suite Teardown    common.Close the Browser
+Test Setup    common.Mockup test data
+Test Teardown    common.Delete Mockup data
 #$ robot -d results -i 123 tests/crm.robot
 *** Variables ***
 ${url}    https://automationplayground.com/crm/
@@ -26,10 +26,9 @@ Login to CRM with valid credentials
 Should be able to add a new customer
     [documentation]    This test verifies that a new customer can be added to the CRM system.
     [Tags]    regression    smoke    123
-    Go to CRM and Setup Selenium Defaults
-    Login to CRM
-    Create a new customer
-    Verify that the customer was added successfully
-    Close the browser
+    crmGUI.Login to CRM
+    crmGUI.Create a new customer
+    crmGUI.Verify that the customer was added successfully
+
 
 
