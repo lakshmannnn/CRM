@@ -19,5 +19,5 @@ Close the browser
        Close All Browsers
 Mockup test data
     Log    this test setup is for future use
-Delete Mockup dasta
+Delete Mockup data
     Log    this test teardown is for future use
