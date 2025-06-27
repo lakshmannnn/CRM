@@ -5,7 +5,7 @@ Suite Setup    common.Go to CRM and Setup Selenium Defaults
 Suite Teardown    common.Close the Browser
 Test Setup    common.Mockup test data
 Test Teardown    common.Delete Mockup data
-#$ robot -d results -i 123 tests/crm.robot
+#$$ robot --loglevel trace -d results -i 124 -v browser:chrome -t "Should be able to add a new customer usig Gherkin syntax" tests/crm.robot
 *** Variables ***
 ${url}    https://automationplayground.com/crm/
 ${browser}    ff
@@ -29,6 +29,13 @@ Should be able to add a new customer
     crmGUI.Login to CRM
     crmGUI.Create a new customer
     crmGUI.Verify that the customer was added successfully
+Should be able to add a new customer usig Gherkin syntax
+    [documentation]    This test verifies that a new customer can be added to the CRM system.
+    [Tags]    regression    smoke    124
+    Given crmGUI.Login to CRM
+    When crmGUI.Create a new customer
+    And Log    this is for future use
+    Then crmGUI.Verify that the customer was added successfully
 
 
 
