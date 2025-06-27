@@ -66,3 +66,4 @@ Delete Directories
     Remove Directory    ${CURDIR}/Folder2
     Should Not Exist    ${CURDIR}/Folder1
     Should Not Exist    ${CURDIR}/Folder2
+
